@@ -1,15 +1,15 @@
 <?php
-
- 
  include '../inc/navbar/sidebar.php'; 
- 
-
-
+ require_once '../db/db_conn.php';
 ?>
 
 <main class="col col-md-8 col-sm-3 col-lg-8 col-xl-9 m-3 py-5">
     <h1 class="d-flex justify-content-center">Main Dashborad</h1>
     <div class="row mt-5">
+
+        <?php
+            $result = $conn->getUser();
+        ?>
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
@@ -17,12 +17,15 @@
                 </div>
                 <div class="card-body text-center">
                     <h6 class="card-subtitle mb-2 text-muted"></h6>
-                    <p class="card-text">20</p>
+                    <p class="card-text"><?php echo $result->num_rows;?></p>
                     <a href="user.php" class="btn btn-primary">View Table</a>
                 </div>
             </div>
         </div>
 
+        <?php
+            $result = $conn->getHRAdmin();
+        ?>
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
@@ -30,7 +33,7 @@
                 </div>
                 <div class="card-body text-center">
                     <h6 class="card-subtitle mb-2 text-muted"></h6>
-                    <p class="card-text">20</p>
+                    <p class="card-text"><?php echo $result->num_rows;?></p>
                     <a href="admins.php" class="btn btn-primary">View Table</a>
                 </div>
             </div>
