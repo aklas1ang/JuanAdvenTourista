@@ -1,0 +1,383 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+.snip1519 {
+  font-family:Times New Roman;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 250px;
+  max-width: 310px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-top: 3px  solid #d2652d;
+  color: #1b1919;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.snip1519 *,
+.snip1519 *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.snip1519 figcaption {
+  padding: 12% 10% 14%;
+}
+
+.snip1519 i {
+  font-size: 54px;
+  color: #fff;
+  width: 80px;
+  line-height: 80px;
+  background-color: #d2652d;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0 0 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.snip1519 h3 {
+  color: #3c3c3c;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 10px 0;
+}
+
+.snip1519 p {
+  font-size: 0.9em;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+.snip1519 .button {
+  text-decoration: none;
+  color: rgb(224, 198, 46);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background-color: #54504b;
+  border-color: yellow;
+}
+
+.snip1519 .button:before {
+  background-color: #d2652d;
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  z-index: -1;
+  opacity: 0;
+}
+
+.snip1519 .button:hover {
+  color: #fff;
+}
+
+.snip1519 .button:hover:before {
+  top: 0;
+  opacity: 1;
+}
+
+
+
+  /* this is for the search bar */
+.wrapper {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper .searchBox {
+  width: 500px;
+  height: 65px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 8px 6px -10px #b3c6ff;
+}
+
+.wrapper .searchBox .dropdown {
+  width: 150px;
+  border-right: 2px solid #dde2f1;
+  color: #141414;
+  position: relative;
+  cursor: pointer;
+}
+
+.wrapper .searchBox .dropdown .defaultOption {
+  text-transform: uppercase;
+  padding: 13px 15px;
+  font-size: 14px;
+  user-select: none;
+}
+
+.wrapper .searchBox .dropdown ul {
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  background: #fff;
+  width: 150px;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 8px 8px 6px -10px #b3c6ff;
+  display: none;
+}
+
+.wrapper .searchBox .dropdown ul.active{
+  display: block;
+}
+
+.wrapper .searchBox .dropdown ul li {
+  padding-bottom: 20px;
+  user-select: none;
+}
+
+.wrapper .searchBox .dropdown ul li:last-child {
+  padding-bottom: 0;
+}
+
+.wrapper .searchBox .dropdown ul li:hover {
+  color: #1937ce;
+}
+
+.wrapper .searchBox .dropdown:before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  border: 8px solid;
+  border-color: #5078ef transparent transparent transparent;
+}
+
+.wrapper .searchBox .searchField {
+  width: 350px;
+  height: 100%;
+  position: relative;
+}
+
+.wrapper .searchBox .searchField .input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 38px;
+  column-span: #143fca;
+}
+
+.wrapper .searchBox .searchField .fas {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  color: #0b45f1;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: #0d4fd3;
+}
+
+::-moz-input-placeholder {
+  color: #1b1bb9;
+}
+
+::-ms-input-placeholder {
+  color: #1919c2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* this is for the footer */
+
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}

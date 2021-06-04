@@ -1,0 +1,100 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.rounded-circle{
+margin-left:20px;
+margin-top:20px;
+}
+
+
+.container {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(16, 112, 201);
+  overflow-x: hidden;
+  padding-top: 20px;
+ color:white;
+}
+
+.container a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #131111;
+  display: block;
+}
+
+.container a:hover {
+  color: #f1f1f1;
+}
+.sidenav{
+    text-align:center;
+    margin-top:30px;
+}
+.dashboard{
+    padding:10px;
+    height:50px;
+    border:solid 1px white;
+    border-radius: 10px;
+}
+
+.rooms{
+    padding:10px;
+    margin-top:10px;
+    height:50px;
+    border:solid 1px white;
+   border-radius: 10px;
+   
+}
+
+.spots{
+    padding:10px;
+    margin-top:10px;
+    height:50px;
+    border:solid 1px white;
+    border-radius: 10px;
+}
+.bookings{
+  padding:10px;
+    margin-top:10px;
+    height:50px;
+    border:solid 1px white;
+    border-radius: 10px;
+}
+.logout{
+    padding:10px;
+    margin-top:10px;
+    height:50px;
+    border:solid 1px white;
+    border-radius: 10px;
+}
+hr{
+    margin-top: 20px;
+    border: 1px solid whitesmoke;
+  }
+.topbar{
+  width:auto;
+}
+.mainContent{
+  margin-top:100px;
+  margin-left:300px;
+  margin-right:100px;
+}
+
+
+
+.page-footer {
+  padding: 20px 5px;
+  font-size: 13px;
+  background-color: #222c3c;
+  
+}
+
+
+

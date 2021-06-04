@@ -1,10 +1,18 @@
 <?php 
-    include '../inc/navbar/sidebar.php'; 
-    require_once '../db/db_conn.php';
+    include '../inc/navbar/admin/sidebar.php';
 ?>
 
 <main class="col col-md-8 col-sm-3 col-lg-8 col-xl-9 m-3 py-5">
     <h1 class="d-flex justify-content-center">User Accounts</h1>
+    <?php
+        if(isset($_GET['Removed'])){
+    ?>
+            <div class="alert alert-success">
+                <?php echo $_GET['Removed']; ?>
+            </div>
+    <?php
+        }
+    ?>
     <div class="container-fluid">
         <?php
             $result = $conn->getUser();
@@ -20,13 +28,14 @@
                     </thead>
                     <tbody>
                         <?php
+                            $i = 1;
                             while($row = $result->fetch_assoc()){
                         ?>
                                 <tr>
-                                    <td><?=$row['ID']?></td>
+                                    <td><?= $i++;?></td>
                                     <td><?=$row['Fullname']?></td>
                                     <td>
-                                        <a href="" class="btn btn-danger">Remove</a>
+                                        <a href="remove.php?user='user'&id=<?=$row['ID']?>" class="btn btn-danger">Remove</a>
                                     </td>
                                 </tr>
                         <?php

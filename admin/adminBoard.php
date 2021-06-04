@@ -1,6 +1,5 @@
 <?php
- include '../inc/navbar/sidebar.php'; 
- require_once '../db/db_conn.php';
+ include '../inc/navbar/admin/sidebar.php';
 ?>
 
 <main class="col col-md-8 col-sm-3 col-lg-8 col-xl-9 m-3 py-5">
@@ -39,6 +38,9 @@
             </div>
         </div>
 
+        <?php
+            $result = $conn->getPendingSpots();
+        ?>
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
@@ -46,7 +48,7 @@
                 </div>
                 <div class="card-body text-center">
                     <h6 class="card-subtitle mb-2 text-muted"></h6>
-                    <p class="card-text">20</p>
+                    <p class="card-text"><?php echo $result->num_rows;?></p>
                     <a href="pendings.php" class="btn btn-primary">View Table</a>
                 </div>
             </div>

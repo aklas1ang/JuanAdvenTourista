@@ -1,0 +1,290 @@
+body{
+   
+    font-family:Times New Roman;
+   
+}
+
+
+.nav {
+    display: block;
+    font: 15px Helvetica, Tahoma, serif;
+    text-transform: uppercase;
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+}
+
+.nav li {
+    display: inline-block;
+    list-style: none;
+    width: 20%;
+    
+}
+
+.nav .button-dropdown {
+    position: relative;
+}
+
+.nav li a {
+    display: block;
+    color: #333;
+    background-color: rgb(238, 238, 247);
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.nav li a span {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 10px;
+    color: #999;
+}
+
+.nav li a:hover, .nav li a.dropdown-toggle.active {
+    background-color: #289dcc;
+    color: #fff;
+}
+
+.nav li a:hover span, .nav li a.dropdown-toggle.active span {
+    color: #fff;
+}
+
+.nav li .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    margin-top: 3px;
+    text-align: left;
+}
+
+.nav li .dropdown-menu.active {
+    display: block;
+}
+
+.nav li .dropdown-menu a {
+    width: 200px;
+}
+.card {
+
+    transition: transform .2s;
+  }
+  
+  .card:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+/* this is for the search bar */
+
+
+.wrapper {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .searchBox {
+    width: 500px;
+    height: 65px;
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    padding: 10px;
+    box-shadow: 0 8px 6px -10px #b3c6ff;
+}
+
+.wrapper .searchBox .dropdown {
+    width: 150px;
+    border-right: 2px solid #dde2f1;
+    color: #dde1f0;
+    position: relative;
+    cursor: pointer;
+}
+
+.wrapper .searchBox .dropdown .defaultOption {
+    text-transform: uppercase;
+    padding: 13px 15px;
+    font-size: 14px;
+    user-select: none;
+}
+
+.wrapper .searchBox .dropdown ul {
+    position: absolute;
+    top: 70px;
+    left: -10px;
+    background: #fff;
+    width: 150px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 8px 8px 6px -10px #b3c6ff;
+    display: none;
+}
+
+.wrapper .searchBox .dropdown ul.active{
+    display: block;
+}
+
+.wrapper .searchBox .dropdown ul li {
+    padding-bottom: 20px;
+    user-select: none;
+}
+
+.wrapper .searchBox .dropdown ul li:last-child {
+    padding-bottom: 0;
+}
+
+.wrapper .searchBox .dropdown ul li:hover {
+    color: #6f768d;
+}
+
+.wrapper .searchBox .dropdown:before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    border: 8px solid;
+    border-color: #5078ef transparent transparent transparent;
+}
+
+.wrapper .searchBox .searchField {
+    width: 350px;
+    height: 100%;
+    position: relative;
+}
+
+.wrapper .searchBox .searchField .input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 38px;
+    column-span: #6f768d;
+}
+
+.wrapper .searchBox .searchField .fas {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    color: #5078ef;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    color: #9fa3b1;
+}
+
+::-moz-input-placeholder {
+    color: #9fa3b1;
+}
+
+::-ms-input-placeholder {
+    color: #9fa3b1;
+}
+
+
+
+.snip1519 {
+    font-family: 'Roboto', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 250px;
+    max-width: 310px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-top: 3px solid #d2652d;
+    color: #9e9e9e;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .snip1519 *,
+  .snip1519 *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+  }
+  
+  .snip1519 figcaption {
+    padding: 12% 10% 14%;
+  }
+  
+  .snip1519 i {
+    font-size: 54px;
+    color: #fff;
+    width: 80px;
+    line-height: 80px;
+    background-color: #d2652d;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 0 10px;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .snip1519 h3 {
+    color: #3c3c3c;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+    margin: 10px 0;
+  }
+  
+  .snip1519 p {
+    font-size: 0.9em;
+    font-weight: 300;
+    margin: 0 0 20px;
+  }
+  
+
+  h2{
+    position: relative;
+ }
+ h2::after{
+    content: "";
+    width: 130px;
+    position: absolute;
+    margin: 0 auto;
+    height: 3px;
+    background: #FFC107;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+ }
+ .carousel-inner .carousel-item .img-box{
+    width: 135px;
+    height: 135px;
+ }
+ .carousel-control-prev{
+    left: -100px;
+ }
+ .carousel-control-next{
+    right: -100px;
+ }
+ .carousel-indicators{
+    top: 320px;
+ }
+ @media (min-width: 320px) and (max-width: 640px) {
+    .carousel-inner .carousel-item p{
+       font-size: 14px;
+    }
+    .carousel-control-prev{
+       left: -40px;
+    }
+    .carousel-control-next{
+       right: -40px;
+    }
+     .carousel-indicators{
+       top: 400px;
+    }
+ }
+  

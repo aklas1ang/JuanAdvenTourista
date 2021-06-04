@@ -1,6 +1,5 @@
 <?php
-include '../inc/navbar/sidebar.php';
-require_once '../db/db_conn.php';
+include '../inc/navbar/admin/sidebar.php';
 ?>
 
 <main class="col col-md-8 col-sm-3 col-lg-8 col-xl-9 py-5">
@@ -8,12 +7,18 @@ require_once '../db/db_conn.php';
     <div class="container-fluid mt-5">
         <button class="float-left btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Create a New Admin</button>
         <?php
-if (isset($_GET['Success'])) {
-    ?>
+            if (isset($_GET['Success'])) {
+        ?>
                 <div class="alert alert-success"><?php echo $_GET['Success']; ?></div>
         <?php
-}
-?>
+            }else if(isset($_GET['Removed'])){
+        ?>
+                <div class="alert alert-success">
+                    <?php echo $_GET['Removed']; ?>
+                </div>
+        <?php
+            }
+        ?>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -23,17 +28,15 @@ if (isset($_GET['Success'])) {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="../create/createHotelResortAdmin.php" method="POST">
+                        <form action="../create/create.php" method="POST">
                             <div class="mb-3">
                                 <label for="fullname" class="form-label">Fullname</label>
                                 <input type="text" class="form-control" name="fullname">
                             </div>
+                            
                             <div class="mb-3">
-                                <label for="type" class="form-label">Type</label>
-                                <select name="type" class="form-select" aria-label="Default select example">
-                                    <option selected value="Hotel">Hotel</option>
-                                    <option value="Resort">Resort</option>
-                                </select>
+                                <label for="building" class="form-label">Hotel/Resort</label>
+                                <select name="building" id="select" class="form-select"></select>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Username</label>
@@ -43,7 +46,7 @@ if (isset($_GET['Success'])) {
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" name="password">
                             </div>
-                            <button type="submit" name="create" class="btn btn-primary">Create</button>
+                            <button type="submit" name="admin" class="btn btn-primary">Create</button>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -62,20 +65,22 @@ if (isset($_GET['Success'])) {
                             <th scope="col">ID</th>
                             <th scope="col">Fullname</th>
                             <th scope="col">Type</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php 
+                            $i = 1;
                             while($row = $result->fetch_assoc()){
                         ?>
                                 <tr>
-                                    <td><?=$row['ID']?></td>
+                                    <td><?=$i++?></td>
                                     <td><?=$row['Fullname']?></td>
                                     <td><?=$row['Type']?></td>
-                                    <td scope="2">
-                                        <a href="" class="btn btn-success">Edit</a>
-                                        <a href="" class="btn btn-danger">Remove</a>
+                                    <td><?=$row['Name']?></td>
+                                    <td>
+                                        <a href="remove.php?admins='admins'&id=<?=$row['ID']?>" class="btn btn-danger">Remove</a>
                                     </td>
                                 </tr>
                         <?php
@@ -97,6 +102,28 @@ if (isset($_GET['Success'])) {
 </div>
 </div>
 
+<script>
+    function getBuilding(){
+        $.post('../db/fetch/adminFetch.php',{
+            building : 'building'
+        },
+        function(buildings){
+            let obj = JSON.parse(buildings);
+            obj.forEach(function(data){
+                $('#select').append(
+                `
+                    <option value="${data.ID}">${data.Name}</option>
+                `
+                );
+            });
+            
+        });
+    }
+
+    $(document).ready(function(){
+        getBuilding();
+    });
+</script>
 </body>
 
 </html>

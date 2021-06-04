@@ -1,5 +1,5 @@
 <?php 
-    include '../inc/navbar/sidebar.php'; 
+    include '../inc/navbar/admin/sidebar.php'; 
     require_once '../db/db_conn.php';
 ?>
 
@@ -7,6 +7,19 @@
     <h1 class="d-flex justify-content-center">Pending Spots</h1>
     <div class="container-fluid">
         <?php
+            if(isset($_GET['Accepted'])){
+        ?>
+                <div class="alert alert-success">
+                    <?php echo $_GET['Accepted']; ?>
+                </div>
+        <?php
+            }else if(isset($_GET['Declined'])){
+        ?>
+                <div class="alert alert-success">
+                    <?php echo $_GET['Declined'];?>
+                </div>
+        <?php
+            }
             $result = $conn->getPendingSpots();
             if($result->num_rows > 0){
         ?>
@@ -21,17 +34,16 @@
                     </thead>
                     <tbody>
                         <?php 
+                            $i = 1;
                             while($row = $result->fetch_assoc()){
                         ?>
                                 <tr>
-                                    <td><?=$row['ID']?></td>
+                                    <td><?=$i++;?></td>
                                     <td><?=$row['Name']?></td>
                                     <td><?=$row['Location']?></td>
                                     <td>
-                                        <!-- butanganan ug onclick function -->
-                                        <button class="btn btn-info">Details</button>
-                                        <a href="" class="btn btn-primary">Approve</a>
-                                        <a href="" class="btn btn-danger">Decline</a>
+                                        <button data-bs-toggle="modal" data-bs-target="#spots" onclick="getDetails(<?=$row['ID']?>)" class="btn btn-info">Details</button>
+                                        <a href="remove.php?pending='pending'&id=<?=$row['ID']?>" class="btn btn-danger">Decline</a>
                                     </td>
                                 </tr>
                         <?php                        
@@ -57,19 +69,20 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="spotsLabel">Panagsama Beach</h5>
+                    <h5 class="modal-title" id="spotsLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="clearfix">
-                        <div class="col-md-6 float-mb-end mb-3 border border-primary">
-                            <img height="100%" width="100%" alt="">
+                        <div class="col-md-5 float-md-end mb-3 ms-md-3 border border-dark" style="height:200px">
+                            <img id="image" height="100%" width="100%" alt="">
                         </div>
+                        <p id="description"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <a id="link" class="btn btn-primary">Accept</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -77,6 +90,20 @@
 </main>
 </div>
 </div>
+
+<script>
+    function getDetails(id){
+    $.post('../db/fetch/adminFetch.php', {
+        single: id
+    }, function(details){
+        let data = JSON.parse(details);
+        $('#link').attr('href',`accept.php?id=${id}`)
+        $('#spotsLabel').text(`${data.Name}`);
+        $('#description').text(`${data.Description}`);
+        $('#image').attr('src',`../imgs/spots/${data.Image}`);
+    });
+}
+</script>
 </body>
 
 </html>
